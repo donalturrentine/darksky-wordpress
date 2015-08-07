@@ -29,6 +29,27 @@ License: MIT
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	THE SOFTWARE.
 */
+
+add_action( 'admin_menu', 'darksky_wordpress' );
+
+function darksky_wordpress(){
+
+  $page_title = 'DarkSky Wordpress';
+  $menu_title = 'DarkSky Wordpress Settings';
+  $capability = 'manage_options';
+  $menu_slug  = 'darksky-wordpress';
+  $function   = 'darksky_wordpress_Settings';
+  $icon_url   = 'dashicons-media-code';
+  $position   = 4;
+
+  add_menu_page( $page_title,
+                 $menu_title, 
+                 $capability, 
+                 $menu_slug, 
+                 $function, 
+                 $icon_url, 
+                 $position );
+}
 function darksky_wordpress_shortcode($atts, $content = null) {
     //https://api.forecast.io/forecast/APIKEY/LATITUDE,LONGITUDE
     //https://api.forecast.io/forecast/APIKEY/LATITUDE,LONGITUDE,TIME
