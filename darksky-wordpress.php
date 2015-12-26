@@ -32,11 +32,6 @@ License: MIT
 
 add_action( 'admin_menu', 'darksky_wordpress' );
 
-
-
-
-
-
 if( !function_exists("darksky_wordpress") ) {
 	
 	function darksky_wordpress(){
